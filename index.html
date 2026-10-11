@@ -416,7 +416,8 @@ body::-webkit-scrollbar {
         .marquee-track2{
       display: flex;
       flex-direction: row-reverse;
-      width: 88px;
+      /* Grow to the combined intrinsic width of every image in the track. */
+      width: max-content;
       height: 31px;
       gap: 5px;
       animation: marquee-right 15s linear infinite;
@@ -486,7 +487,8 @@ body::-webkit-scrollbar {
       display: flex;
       gap: 5px;
       height: 55px;
-      width: 99px;
+      /* Grow to the combined intrinsic width of every image in the track. */
+      width: max-content;
       flex-direction: row;
       animation: marquee4 25s linear infinite;
     }
@@ -508,9 +510,17 @@ body::-webkit-scrollbar {
       display: flex;
       gap: 5px;
       height: 55px;
-      width: 99px;
+      /* Grow to the combined intrinsic width of every image in the track. */
+      width: max-content;
       flex-direction: row;
       animation: marquee5 25s linear infinite;
+    }
+
+    /* Keep every image at its intrinsic width instead of flex-shrinking it. */
+    .marquee-track2 img,
+    .marquee-track4 img,
+    .marquee-track5 img{
+      flex: 0 0 auto;
     }
     
     .marquee-track5:hover{
