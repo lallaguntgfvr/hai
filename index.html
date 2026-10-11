@@ -1,0 +1,874 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head><body topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" marginwidth="0" marginheight="0"><div class="crt"></div>
+    <title>My Awesome Website</title>
+  <style>
+
+
+        
+      .crt::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 999;
+      background-size:
+        100% 2px,
+        3px 100%;
+      pointer-events: none;
+    }
+
+    @keyframes flicker {
+      0% {
+        opacity: 0.27861;
+      }
+      5% {
+        opacity: 0.34769;
+      }
+      10% {
+        opacity: 0.23604;
+      }
+      15% {
+        opacity: 0.10626;
+      }
+      20% {
+        opacity: 0.18128;
+      }
+      25% {
+        opacity: 0.10626;
+      }
+      30% {
+        opacity: 0.18128;
+      }
+      35% {
+        opacity: 0.23604;
+      }
+    }
+
+    .crt::after {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(18, 16, 16, 0.1);
+      opacity: 0;
+      z-index: 999;
+      pointer-events: none;
+      animation: flicker 0.15s infinite;
+    }
+
+    @font-face {
+      font-family: windows;
+      src: url(https://dl.dropbox.com/s/cn0l1yjacta4whv/W95FA.otf);
+     }
+
+    @font-face {
+      font-family: gothic;
+      src: url(webfontkit-20260317-030915/gothicpixels.woff);
+    }
+    
+    @font-face {
+      font-family: english;
+      src: url(webfontkit-20260318-110327/pixeled_english_font-webfont.woff);
+    }
+    
+    @font-face {
+      font-family: spirit;
+      src: url(webfontkit-20260318-110327/littlespirit-webfont.woff);
+    }
+    
+    @font-face{
+      font-family: ledlight;
+      src: url(webfontkit-20260317-030915/ledlight.woff);
+    }
+    
+    @font-face{
+      font-family: ithornet;
+      src: url(webfontkit-20260317-030915/ithornet.woff);
+    }
+    
+    @font-face{
+      font-family: angel;
+      src: url(webfontkit-20260317-030915/angel_wish.woff);
+    }
+    
+    @font-face{
+      font-family: war;
+      src: url(webfontkit-20260317-030915/angelicwar.woff);
+    }
+    
+    ::-webkit-scrollbar {
+width: 16px;
+height: 16px;
+}
+
+::-webkit-scrollbar-track {
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVQIW2M4fPz0////GYAYyAIASnoKpV3w4kgAAAAASUVORK5CYII=");
+image-rendering: pixelated;
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: grayscale(100%);
+}
+
+::-webkit-scrollbar-track:active {
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEElEQVQIW2No6+pjgAAgCwAWogM9VKrgGQAAAABJRU5ErkJggg==");
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+filter: grayscale(100%);
+}
+
+::-webkit-scrollbar-thumb {
+border-top: 1px solid #cccccc;
+border-left: 1px solid #cccccc;
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+width: 16px;
+height: 16px;
+background-color: #cccccc;
+z-index: 1;
+}
+
+::-webkit-scrollbar-corner {
+background-color: #cccccc;
+}
+
+::-webkit-resizer {
+width: 16px;
+height: 16px;
+background-color: #cccccc;
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+background-position: bottom right;
+background-repeat: no-repeat;
+image-rendering: pixelated;
+}
+
+::-webkit-scrollbar-button,
+.scroll::-webkit-scrollbar-button {
+border-top: 1px solid #cccccc;
+border-left: 1px solid #cccccc;
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+display: block;
+width: 16px;
+height: 16px;
+background-color: #cccccc;
+image-rendering: pixelated;
+background-repeat: no-repeat;
+background-position: center center;
+}
+
+::-webkit-scrollbar-button:active,
+.scroll::-webkit-scrollbar-button:active {
+background-position: 2px 2px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement,
+.scroll::-webkit-scrollbar-button:horizontal:decrement {
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+}
+
+::-webkit-scrollbar-button:horizontal:increment,
+.scroll::-webkit-scrollbar-button:horizontal:increment {
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+}
+
+::-webkit-scrollbar-button:vertical:decrement,
+.scroll::-webkit-scrollbar-button:vertical:decrement {
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+}
+
+::-webkit-scrollbar-button:vertical:increment,
+.scroll::-webkit-scrollbar-button:vertical:increment {
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+}
+
+::-webkit-scrollbar-button:horizontal:increment:start,
+.scroll::-webkit-scrollbar-button:horizontal:increment:start {
+display: none;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:end,
+.scroll::-webkit-scrollbar-button:horizontal:decrement:end {
+display: none;
+}
+
+::-webkit-scrollbar-button:vertical:increment:start,
+.scroll::-webkit-scrollbar-button:vertical:increment:start {
+display: none;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:end,
+.scroll::-webkit-scrollbar-button:vertical:decrement:end {
+display: none;
+}
+
+::-webkit-scrollbar-button:active,
+.scroll::-webkit-scrollbar-button:active {
+border-top: 1px solid #868a8e;
+border-left: 1px solid #868a8e;
+border-bottom: 1px solid #868a8e;
+border-right: 1px solid #868a8e;
+box-shadow: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+    
+    body {
+      cursor: url(http://www.rw-designer.com/cursor-extern.php?id=220364), auto;
+      background: url(assets/background2.jpg);
+      background-repeat: repeat-y;
+      background-size: cover;
+      font-family: windows;
+      font-size: 11pt;
+      color: #232323;
+      overflow-y: scroll;
+      justify-content: center;
+      align-content: center;
+    }
+    
+    .box {
+      max-width: 1050px;
+      margin-left: auto;
+      margin-right:auto;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      padding: 0px;
+      box-sizing: border-box;
+      justify-content: center;
+      word-break: break-word;
+      margin-bottom:10px;
+    }
+    
+    .containerholder {
+      width: 1050px;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      box-sizing: border-box;
+      justify-content: left;
+      background: url(assets/background.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 5px;
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      border-radius: 5px;
+    }
+    
+    .container {
+      max-width: 1045px;
+      padding: 3px;
+      margin:5px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      box-sizing: border-box;
+      justify-content: left;
+      background: url(assets/background.png);
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      border-radius: 5px;
+    }
+    
+    .inner {
+      background: url(assets/background.png);
+      margin: 5px;
+      padding: 0px;
+      position: relative;
+      align-content: flex-start;
+      box-sizing: border-box;
+      justify-content: left;
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      border-radius:5px;
+    }
+    
+    .innercontent {
+      padding: 5px;
+      padding-bottom:10px;
+    }
+    
+    .innerleft {
+      background: url(assets/background.png);
+      margin: 5px;
+      position: relative;
+      align-content: flex-start;
+      box-sizing: border-box;
+      justify-content: left;
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      padding: 0px;
+      border-radius:5px;
+    }
+    
+    .biscuitbox {
+      border-image: url("https://nykto.neocities.org/7graphics/NJa4bp2.png") 9 fill round;
+      border-width: 10px;
+      border-style: solid;
+      margin: 5px;
+      padding: 0px;
+      background: transparent;
+    }
+    
+    .box3 {
+      padding: 10px;
+      background: white;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+      -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+      border-radius: 10px;
+    }
+    
+    .headertop{
+      width: 1050px;
+      height: 150px;
+      background: url(assets/background.png);
+      background-size: cover;
+      background-position: center;
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      text-shadow: 2px 2px 7px #000000;
+      color: white;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    
+    .headerbottom{
+      width: 1050px;
+      height: 150px;
+      background: url(assets/background.png);
+      background-size: cover;
+      background-position: bottom center;
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      text-shadow: 2px 2px 7px #000000;
+      color: white;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+      
+      .mainpart {
+      margin-left: 0px;
+      position: relative;
+      width: 550px;
+      line-height: 15px;
+      word-break: break-word;
+      text-align: justify;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    
+    .marquee{
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .marquee-track{
+      display: flex;
+      gap: 5px;
+      width: 97px;
+      height: 297px;
+      animation: marquee-scroll 15s linear infinite;
+    }
+    
+    .marquee-track:hover{
+      animation-play-state: paused;
+    }
+    
+    @keyframes marquee-scroll{
+      from {
+        transform: translateX(100px);
+      }
+      to {
+        transform: translateX(-900px);
+      }
+    }
+    
+        .marquee-track2{
+      display: flex;
+      flex-direction: row-reverse;
+      width: 88px;
+      height: 31px;
+      gap: 5px;
+      animation: marquee-right 15s linear infinite;
+    }
+    
+    .marquee-track2:hover{
+      animation-play-state: paused;
+    }
+    
+    @keyframes marquee-right{
+      from {
+      transform: translateX(450px);
+    }
+    to {
+      transform: translateX(1450px);
+    }
+    }
+     
+    .marquee-track3{
+      display: flex;
+     
+            gap: 5px;
+
+      height: 178px;
+      animation: marquee-updown 10s linear infinite;
+      flex-direction: column;
+    }
+    
+    .marquee-track3:hover{
+      animation-play-state: paused;
+    }
+    
+    @keyframes marquee-updown{
+      from {
+        transform: translateY(40px);
+      }
+      to {
+        transform: translateY(-510px);
+      }
+    }
+    
+    .marquee-track3 img{
+      width: 205px;
+      height: 50px;
+    }
+    
+    .fm .innercontent{
+      text-align: center;
+    }
+    
+    .fm img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .blinkies .marquee{
+      display: flex;
+      justify-content: center;
+    }
+    
+    .blinkies .marquee-track3{
+      height: 320px;
+    }
+    
+    .marquee-track4{
+      display: flex;
+      gap: 5px;
+      height: 55px;
+      width: 99px;
+      flex-direction: row;
+      animation: marquee4 25s linear infinite;
+    }
+    
+    .marquee-track4:hover{
+      animation-play-state: paused;
+    }
+    
+    @keyframes marquee4{
+      from {
+        transform: translateX(100px);
+      }
+      to {
+        transform: translateX(-2475px);
+      }
+    }
+    
+    .marquee-track5{
+      display: flex;
+      gap: 5px;
+      height: 55px;
+      width: 99px;
+      flex-direction: row;
+      animation: marquee5 25s linear infinite;
+    }
+    
+    .marquee-track5:hover{
+      animation-play-state: paused;
+    }
+    
+    @keyframes marquee5{
+      from {
+        transform: translateX(-2475px);
+      }
+      to {
+        transform: translateX(0px);
+      }
+    }
+    
+    
+    #left-column {
+      margin: 0px;
+      line-height: 15px;
+      width: 266px;
+      word-break: break-word;
+      text-align: justify;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    
+    #left-column .styled-link{
+      display: block;
+      margin: 8px;
+      padding: 4px 0;
+      padding-left: 4px;
+      color: #232323;
+      text-decoration: underline;
+      background: linear-gradient(180deg,gray 0%, white 45%, gray 47%, gray 60%, lightgray 100%);  
+      border: solid 2px #6d6d6d;
+      border-radius: 4px;
+      text-shadow: 0px 0px 5px #FFFFFF;
+    }
+    
+    #left-column .styled-link:hover{
+      text-shadow: 0 0 5px #ffffff, 0 0 20px #ffffff, 0 0 20px #ffffff;
+      color: white;
+    }
+    
+      #right-column {
+      margin: 0px;
+      line-height: 15px;
+      width: 266px;
+      word-break: break-word;
+      text-align: justify;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    
+    .whatisnykto {
+      font-family: spirit;
+      margin-top: 8px;
+      margin-bottom: 2px;
+    }
+    
+    #statuscafe {
+    border-image: url("https://nykto.neocities.org/7graphics/NJa4bp2.png") 9 fill round;
+    border-width: 10px;
+    border-style: solid;
+    padding: 0px;
+    border-radius: 5px;
+    }
+    #statuscafe-username {
+      background: linear-gradient(180deg,gray 0%, white 45%, gray 47%, gray 60%, lightgray 100%);  
+      border: solid 2px #6d6d6d;
+      border-radius: 4px;
+      text-shadow: 0px 0px 5px #FFFFFF;
+      padding: 5px;
+      margin-bottom: .5em;
+    }
+    #statuscafe-content {
+    margin-top:0px;
+    padding: 8px;
+    height: 40px;
+    border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+      -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+      -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75) inset;
+    }
+    
+      .todo {
+      background: url(https://nykto.neocities.org/9backgrounds/432ffaef9daa71b3b37d31d4da93f41a.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: 5px;
+      padding: 0px;
+      position: relative;
+      align-content: flex-start;
+      box-sizing: border-box;
+      justify-content: left;
+      border: ridge #232323 3px;
+      outline: black 2px solid;
+      border-radius:5px;
+    }
+   
+    .centertext {
+      text-align: center
+    } 
+    
+    span {
+      font-family: gothic;
+    }
+    
+    button {
+      border: 0px #ffffff solid;
+      width: 15px;
+      height: 15px;
+      padding: 0px 5px;
+      float: right;
+      background: url(https://nykto.neocities.org/5pngs/7b2713e4.gif);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    
+  </style>
+  
+  
+   
+    
+    <div class="box">
+      
+      <div class="headertop" style="margin-top: 30px;">
+      
+      </div>
+      
+    </div>
+    
+    <div class="box" style="margin-top: 10px;">
+      
+      <div class="containerholder">
+        
+        <img src="assets/keefjam.png" style="z-index:10; position: absolute; margin-left:620px; margin-top: -70px; height: 350px; filter: drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0.5px black) drop-shadow(0 0.5px 1px black);">
+        
+        <div id="left-column">
+        <div class="container">
+          
+          
+          <div class="innerleft">
+            
+            
+            <a href="pages/introv5" class="styled-link"><img src="https://nykto.neocities.org/4pixels/IMG_2418.png" style="width:10px; margin-right:3px;">about</a>
+            <a href="/pages/media" class="styled-link"><img src="https://nykto.neocities.org/4pixels/IMG_2418.png" style="width:10px; margin-right:3px;">media log</a>
+            <a href="/pages/" class="styled-link"><img src="https://nykto.neocities.org/4pixels/IMG_2418.png" style="width:10px; margin-right:3px;">games</a>
+            <a href="/pages/blog.html" class="styled-link"><img src="https://nykto.neocities.org/4pixels/IMG_2418.png" style="width:10px; margin-right:3px;">blog</a>
+            <a href="/pages/" class="styled-link"><img src="https://nykto.neocities.org/4pixels/IMG_2418.png" style="width:10px; margin-right:3px;">ship shrine</a>
+            <a href="/pages/collection" class="styled-link"><img src="https://nykto.neocities.org/4pixels/IMG_2418.png" style="width:10px; margin-right:3px;">collections</a>
+          </div>
+          
+  
+          
+
+          
+          
+          <div class="inner fm">
+            <div class="innercontent">
+                  <a href="https://www.last.fm/user/premurder"><img src="https://lastfm-recently-played.vercel.app/api?user=premurder" height="auto" width="200px"></a>
+
+            </div>
+            
+                     </div>
+
+            
+            
+           
+          
+         
+              <div class="inner blinkies">
+            <div class="innercontent">
+ <div class="marquee">
+
+ <div class="marquee-track3">
+ <img src="https://i.postimg.cc/h410jhWy/4c946aa0.gif" alt="4c946aa0">
+<img src="https://i.postimg.cc/Wpw73tL9/b72482a9.gif" alt="b72482a9">
+<img src="https://i.postimg.cc/Wpw73tcN/tumblr-0ae650f0be40616b3d1ce26a7fdf20ac-308a5d46-250.jpg" alt="tumblr-0ae650f0be40616b3d1ce26a7fdf20ac-308a5d46-250">
+<img src="https://i.postimg.cc/2j7x63Nj/tumblr-0f9f8e05c9eb7e632381a1040c100dc9-e988b3a0-250.webp" alt="tumblr-0f9f8e05c9eb7e632381a1040c100dc9-e988b3a0-250">
+<img src="https://i.postimg.cc/mZySDhWD/tumblr-10f2ad1368ef0c24801484e800fa0d81-75afec53-250.webp" alt="tumblr-10f2ad1368ef0c24801484e800fa0d81-75afec53-250">
+<img src="https://i.postimg.cc/SQfGsjbj/tumblr-121e2b907549514faf56d9796aef5632-e4b00c56-250.webp" alt="tumblr-121e2b907549514faf56d9796aef5632-e4b00c56-250">
+<img src="https://i.postimg.cc/nVG1zMfp/tumblr-3e658c556c55f95cefb942edf549139b-8dee2b18-250.webp" alt="tumblr-3e658c556c55f95cefb942edf549139b-8dee2b18-250">
+<img src="https://i.postimg.cc/SQfGsjFH/tumblr-4139a3db0c0b12bf0b312c0e44c86a04-b847907b-250.webp" alt="tumblr-4139a3db0c0b12bf0b312c0e44c86a04-b847907b-250">
+<img src="https://i.postimg.cc/HW9txjDq/tumblr-49c79579cd46df0fe98a998c80acc445-816af64e-250.webp" alt="tumblr-49c79579cd46df0fe98a998c80acc445-816af64e-250">
+<img src="https://i.postimg.cc/RCLTFqxM/tumblr-4a13de655e3f888353ee5a2a9ead271f-4a1146d2-250.webp" alt="tumblr-4a13de655e3f888353ee5a2a9ead271f-4a1146d2-250">
+<img src="https://i.postimg.cc/prCQ1cJY/tumblr-4ea7f69f1b93bc0be08d4eb1d25515a9-08328beb-400.webp" alt="tumblr-4ea7f69f1b93bc0be08d4eb1d25515a9-08328beb-400">
+<img src="https://i.postimg.cc/XNkgJX6Y/tumblr-4fe77451c8271068dec9032b56be0601-b497dc3d-250.webp" alt="tumblr-4fe77451c8271068dec9032b56be0601-b497dc3d-250">
+<img src="https://i.postimg.cc/T2Jcwhvx/tumblr-5dab0fa8d0b543c91c497e6c8886bff6-eeca2c10-250.webp" alt="tumblr-5dab0fa8d0b543c91c497e6c8886bff6-eeca2c10-250">
+<img src="https://i.postimg.cc/9XYBMz5n/tumblr-6bd8ec32253052b1a9bf9d5a9dee27b5-ba4a5993-250.webp" alt="tumblr-6bd8ec32253052b1a9bf9d5a9dee27b5-ba4a5993-250">
+<img src="https://i.postimg.cc/VsWF65Py/tumblr-77d300514618d4d3670e8f6897655c41-4b56c0d2-250.webp" alt="tumblr-77d300514618d4d3670e8f6897655c41-4b56c0d2-250">
+<img src="https://i.postimg.cc/SQfGsjFt/tumblr-7a6e8a972b2a4c0e20256a49761e8e1c-57630f25-250.webp" alt="tumblr-7a6e8a972b2a4c0e20256a49761e8e1c-57630f25-250">
+<img src="https://i.postimg.cc/DfPcZm3y/tumblr-7dfce66ba77e82b3d504284d731104fc-5745b9ad-250.webp" alt="tumblr-7dfce66ba77e82b3d504284d731104fc-5745b9ad-250">
+<img src="https://i.postimg.cc/8kmb5sQX/tumblr-8f06b18be4f8bcba2fbc9a620181aaf6-4d21d9f1-250.webp" alt="tumblr-8f06b18be4f8bcba2fbc9a620181aaf6-4d21d9f1-250">
+<img src="https://i.postimg.cc/SQfGsjF5/tumblr-94fb50d69ece2726ad589dc89523a6c5-9cbe9957-250.webp" alt="tumblr-94fb50d69ece2726ad589dc89523a6c5-9cbe9957-250">
+<img src="https://i.postimg.cc/KcD5z4hF/tumblr-a4cca1232b1f15b791c5e7d5b6eaf7d5-a7f539d2-250.webp" alt="tumblr-a4cca1232b1f15b791c5e7d5b6eaf7d5-a7f539d2-250">
+<img src="https://i.postimg.cc/y6yTdWCH/tumblr-a51e14ad9a1ff3ca6240e75f6bfd43fa-ad672b6e-250.webp" alt="tumblr-a51e14ad9a1ff3ca6240e75f6bfd43fa-ad672b6e-250">
+<img src="https://i.postimg.cc/FFVxR1X5/tumblr-cbbe64173d96d2ca7f98840034fb462c-1ba87683-250.webp" alt="tumblr-cbbe64173d96d2ca7f98840034fb462c-1ba87683-250">
+<img src="https://i.postimg.cc/VsWF65Qp/tumblr-e0ab7e924cbb564092b7b5c05894ed8c-0848a506-250.webp" alt="tumblr-e0ab7e924cbb564092b7b5c05894ed8c-0848a506-250">
+<img src="https://i.postimg.cc/T2Jcwhv1/tumblr-e7ccdfe0eea8cb1981b361e2a4a4081b-dbafda51-250.webp" alt="tumblr-e7ccdfe0eea8cb1981b361e2a4a4081b-dbafda51-250">
+<img src="https://i.postimg.cc/zDFkB3YY/tumblr-f8796bc1fd04cc0f77197369e4248431-19ed133c-250.webp" alt="tumblr-f8796bc1fd04cc0f77197369e4248431-19ed133c-250">
+
+                </div>
+                </div>
+
+
+
+
+         </div>
+           </div>
+        </div>
+                  </div>
+          </div>
+
+         
+       
+           
+           
+       <div class="mainpart">
+         <div class="container">
+           
+           <div class="inner">
+           <div class="innercontent" style="margin-right:120px;">
+             <h1 class="whatisnykto" style="-webkit-text-stroke: 1px white; filter: drop-shadow(-0.5px 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0 black) drop-shadow(0 0.5px 0.5px black) drop-shadow(0 0.5px 1px black);"> WELCOME . . .</h1>
+             <div class="biscuitbox">
+               <div class="box3">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus arcu sem, ultricies vel lacus a, dictum dignissim ligula. Nulla ac rutrum nisi. In id interdum leo, vel elementum lacus. Aenean venenatis sed elit quis semper. Suspendisse lectus diam, fermentum ut sollicitudin quis, egestas quis est. Pellentesque non porttitor elit. Fusce ex neque, vehicula vitae facilisis efficitur, tincidunt nec diam. Pellentesque dignissim augue vitae purus convallis, a tincidunt eros elementum. Duis velit urna, mollis a mollis ut, convallis ac nisl.
+
+<div style="float:right; margin-top: -49px; margin-bottom: 0px; margin-left:5px; margin-right:-50px;">
+
+</div>               </div>
+               
+     
+          
+            </div>
+             </div>
+           </div>
+           </div>
+           
+             <div class="inner" style="padding:5px;">
+             <div class="marquee">
+           <div class="marquee-track2">
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+          </div>
+             </div>
+           </div>
+           
+          
+           
+          
+           
+        
+           
+           <div class="inner">
+             <div class="innercontent">
+               
+               <div class="marquee">
+                 <div class="marquee-track4">
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+                 </div>
+               </div>
+               
+             <div class="marquee" style="margin-top: 5px;">
+                  <div class="marquee-track5">
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+<img src='https://i.postimg.cc/2jdVNZRt/New-Project-(18).png' border='0' alt='New-Project-(18)'>
+   
+                  </div>
+              </div>
+             </div>
+           </div>
+           
+              <div class="inner">
+            
+          <div class="innercontent" style="text-shadow: 0 0 5px #ffffff, 0 0 20px #ffffff, 0 0 20px #ffffff; border-radius: 10px;">
+<iframe src="/webdeck-player/index.html" height="300px" width="500px" style="overflow: visible;"></iframe>
+<div style="position: absolute; bottom: -10px; right: -50px; z-index: 10;">
+  <img src="assets/nu.png" width="140px">
+           </div>
+           </div>
+         </div>
+         
+         
+       </div>
+        
+        <div id="right-column">
+        <div class="container">
+          <div class="inner">
+          <div class="innercontent" style="text-shadow: 0 0 5px #ffffff, 0 0 20px #ffffff, 0 0 20px #ffffff; padding:10px; border-radius: 10px;">
+            <div class="box3">
+             <center>this site displays sensitive topics such as nsfw images, mental illness, and body horror. view with caution.</center>
+            </div>
+          </div>
+          </div>
+          
+          <div class="inner">
+           <div class="innercontent" style="padding:0px; margin: 10px;">
+           
+           <iframe src="https://www3.cbox.ws/box/?boxid=3550721&boxtag=QOwAYp" width="100%" height="240" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" style="border-radius: 10px;"></iframe>	
+           
+           </div>
+          </div>
+          
+
+          
+          
+          <div class="inner" height="300px" background-color: rgb(0 0 0 / 50%);">
+<div class="innercontent" style="padding:0px; margin: 10px; background-color: rgb(0 0 0 / 50%); ">
+<div style="overflow: hidden; position: relative;">
+  <iframe 
+    src="https://tumblrwidget.com/#/embed/redrioty/false/false/false/000000/000000/" 
+    style="width: 250px; height: 350px;">
+  </iframe>
+</div> 
+            </div>
+          </div>
+          
+    
+          
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+
+    
+    <script>
+ 
+  let index = 0;
+
+  const button = document.getElementById("btn");
+  const output = document.getElementById("output");
+
+  button.addEventListener("click", () => {
+    output.textContent = texts[index];
+    index = (index + 1) % texts.length; // loops back to start
+  });
+    </script>
+    
+    
+  
+</body><div id="pt-ext-selection" role="presentation" data-pt-ext-root="true" data-pt-instance="5cbba0ad-6cd4-4890-ae39-eee0f91c5dd6"></div></html>
